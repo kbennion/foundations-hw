@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://jonathansoma.com/site/lede/foundations/class-summaries/10-servers/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>10 - Servers</title>
+  <meta name="description" content="To create a new server">
+
+  <link href="./10 - Servers_files/css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="./10 - Servers_files/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="./10 - Servers_files/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./10 - Servers_files/simple-sidebar.css">
+  <link rel="stylesheet" href="./10 - Servers_files/new.css">
+  
+  <link rel="canonical" href="http://jonathansoma.com/lede/foundations/class-summaries/10-servers/">
+  <link rel="alternate" type="application/rss+xml" title="A million and one tutorials" href="http://jonathansoma.com/site/feed.xml">
+<style type="text/css"></style><style>@-webkit-keyframes popbqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi {50% {-webkit-transform:scale(1.2);}100% {-webkit-transform:scale(1);}}@keyframes popbqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi {50% {-webkit-transform:scale(1.2);transform:scale(1.2);}100% {-webkit-transform:scale(1);transform:scale(1);}}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:solid 2px #fff !important;box-sizing:content-box !important;color:#fff !important;display:block !important;height:auto !important;margin:0 !important;opacity:0.9 !important;padding:7px 10px !important;position:fixed !important;visibility:visible !important;width:auto !important;z-index:2147483647 !important;-webkit-border-radius:5px !important;-webkit-box-shadow:0px 0px 20px #000 !important;-webkit-box-sizing:content-box !important;}.bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi-blocked{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;color:#AAA !important;display:inline !important;text-decoration:line-through !important;}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi br{display:block !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi span{background:transparent !important;padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi div{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;border:0 !important;margin:0 !important;padding:0 !important;width:auto !important;letter-spacing:normal !important;font:13px Arial,Helvetica !important;text-align:left !important;text-shadow:none !important;text-transform:none !important;word-spacing:normal !important;}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi a{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;font-weight:normal !important;background:none !important;text-decoration:underline !important;color:#fff !important;}a#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi-gear{padding:0;margin:0;font:13px Arial,Helvetica;text-transform:none;font-size: 100%;vertical-align:baseline;line-height:normal;color:#fff;position:static;text-decoration:none !important;position:absolute !important;display:none !important;font-size:20px !important;width:20px !important;height:20px !important;line-height:20px !important;text-align:center !important;background-color:rgba(255,255,255,.8) !important;background-image:url(chrome-extension://mlomiejdfkolichcflejclcbmpeaniij/data/images/gear.svg) !important;background-size:16px 16px !important;background-position:center center !important;background-repeat:no-repeat !important;text-decoration:none !important;}a#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi-gear:hover{-webkit-animation-name:popbqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi !important;animation-name:popbqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi !important;-webkit-animation-duration:0.3s !important;animation-duration:0.3s !important;}#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi:hover #bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi-gear{text-decoration:none !important;display:inline-block !important;}@media print{#bqlitzolghsyphzssgiudilzdogeclmtffbjzpjhmi{display:none !important;}}</style></head>
+
+
+  <body>
+    <div id="wrapper">
+        
+
+  
+
+  
+  
+  
+
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <h1 class="sidebar-brand"><a class="sidebar-title" href="http://jonathansoma.com/lede/">Lede Cheat Sheet</a></h1>
+    <ul class="sidebar-nav" id="menu">
+      
+      
+        
+        
+      
+        
+        
+          
+            <li>
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/syllabus">Course Syllabus</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          
+            
+            <li class="closed expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/python-syntax">Python Syntax</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/python-syntax/basics">Basics</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/python-syntax/if-then-else">If-then-else</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/python-syntax/data-types">Data types</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/python-syntax/for-loops">For loops</a></li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+          
+            
+            <li class="closed expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/getting-started">Getting Started</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/sites-to-sign-up-for">Website Registration</a></li>
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/software-to-install">Installing Software</a></li>
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/the-command-line">The Command Line</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/installing-python">Installing Python</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/extra-setup">Extra Setup</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/getting-started/extra-windows-setup">Fixing Windows Issues</a></li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+            
+            <li class="closed expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/using-the-shell">Using the shell</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/using-the-shell/introduction">Introduction</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/using-the-shell/reference">Command Reference</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/using-the-shell/tildes-pipes-and-redirecting-output">Tildes ~, Pipes | and Redirects &gt;</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/using-the-shell/troubleshooting">Troubleshooting</a></li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+            
+            <li class="closed expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/git-and-github">Git and GitHub</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/git-and-github/understanding-git">Understanding git</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/git-and-github/github-workflow">Git Workflow</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/git-and-github/getting-set-up">Settings things up</a></li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+          
+            
+            <li class="closed expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/python-patterns">Python Patterns</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/python-patterns/looping-problems">Looping Patterns</a></li>
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+          
+            
+            <li class="expandable">
+            
+          
+            <a href="http://jonathansoma.com/site/lede/foundations/class-summaries/">Class Summaries</a>
+              <ul id="" class="collapse in" aria-expanded="true">
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/01-class">1 - Command Line &amp; Python Basics</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/02-class">2 - Python Data Structures</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/03-class">3 - Git</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/03-homework">3 - Homework Solution</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/04-class">4 - APIs</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/05-class">5 - APIs &amp; Looping Patterns</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/08%20-%20More%20Pandas%20-%20Review%20and%20Joining%20(complete)">8 - Pandas - Review and Joining</a></li>
+                
+              
+                
+                  <li><a href="http://jonathansoma.com/site/lede/foundations/class-summaries/10-servers/">10 - Servers</a></li>
+                
+              
+              </ul>
+          </li>
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
+    </ul>
+</div><!-- /#sidebar-wrapper -->
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <!-- <nav class="navbar navbar-default no-margin">
+            <div class="navbar-header fixed-brand">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
+                  <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-rocket fa-4"></i> SEEGATESITE</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
+                        </ul>
+            </div>
+</nav> -->
+            <div class="container-fluid xyz">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                      
+                      
+<p class="breadcrumbs"><a href="http://jonathansoma.com/">Home</a> &gt; <a href="http://jonathansoma.com/site/lede/">Lede</a> &gt; <a href="http://jonathansoma.com/site/lede/foundations/">Foundations Study Guide</a> &gt; <a href="http://jonathansoma.com/site/lede/foundations/class-summaries/">Class Summaries</a> &gt;  10 - Servers</p>
+
+
+
+                      <h1>10 - Servers</h1>
+
+                      
+
+                      <h2 id="to-create-a-new-server">To create a new server</h2>
+
+<ol>
+  <li>Open up digital ocean</li>
+  <li>Create Droplet</li>
+  <li>Ubuntu 14.04.4 x64</li>
+  <li>$5/mo</li>
+  <li>New York is fine</li>
+  <li>New SSH Key</li>
+  <li>Paste in our SSH <strong>public</strong> key, naming it <code class="highlighter-rouge">do-droplet</code> (key-creating details below)</li>
+  <li>Make sure you’re only creating one</li>
+  <li>You can give it a unique hostname if you’d like. Maybe <code class="highlighter-rouge">cronmachine</code>?</li>
+  <li>Click <strong>Create</strong> and wait maybe 60 seconds for it to start up.</li>
+</ol>
+
+<h2 id="how-to-create-an-ssh-key">How to create an SSH key</h2>
+
+<p>We’re changing <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">these GitHub directions</a> a little bit. Run the following to start the <code class="highlighter-rouge">ssh-keygen</code> ssh key generator.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh-keygen -t rsa -b 4096 -C "YOUR_EMAIL@EXAMPLE.COM"
+</code></pre>
+</div>
+
+<p>It will say to you:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Enter a file in which to save the key (/Users/YOUR_USERNAME/.ssh/id_rsa):
+</code></pre>
+</div>
+
+<p>WE DON’T WANT TO USE THIS. We want to make a new one, but in the same .ssh directory. We’re going to call it <code class="highlighter-rouge">do-droplet</code>. We can accomplish that by entering this as the filename:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>~/.ssh/do-droplet
+</code></pre>
+</div>
+
+<p><strong>Don’t type anything when it asks you for a passphrase</strong>, just hit enter twice. It will create two files for you, your public and private keys.</p>
+
+<p>Take a look at your private key with <code class="highlighter-rouge">cat</code>. <strong>Never give this away!</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat ~/.ssh/do-droplet
+</code></pre>
+</div>
+
+<p>Now take a look at your public key, also with <code class="highlighter-rouge">cat</code>. <strong>This is the one we’ll paste.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat ~/.ssh/do-droplet.pub
+</code></pre>
+</div>
+
+<p>The next two commands will come in handy later, but <strong>don’t run them yet.</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/do-droplet
+</code></pre>
+</div>
+
+<h2 id="connecting-to-our-server">Connecting to our server</h2>
+
+<p>Open up the page for your droplet, and make a note of your <strong>IP Address</strong>. DO refers to it as IPv4. My IP is <code class="highlighter-rouge">107.170.91.48</code>.</p>
+
+<p>Now we need to connect to our server using <code class="highlighter-rouge">ssh</code>. We’ll be connecting as <code class="highlighter-rouge">root</code>, the A+ best killer cool user.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh root@YOUR_IP
+</code></pre>
+</div>
+
+<p>There will be a question. The answer is <strong>yes</strong>. It will ask you for a password. <strong>You don’t have a password!</strong></p>
+
+<p>Instead of passwords, we’re using public and private keys. <code class="highlighter-rouge">Ctrl+C</code> to quit logging in, and let’s try to log in again using our key (our identity).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh -i ~/.ssh/do-droplet root@107.170.91.48
+</code></pre>
+</div>
+
+<p><strong>Success!</strong></p>
+
+<h2 id="running-things-on-our-server">Running things on our server</h2>
+
+<p>Note the error-y message about packages needing updates</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pwd
+
+ls
+
+curl http://www.nytimes.com
+
+curl http://www.nytimes.com &gt; nyt.txt
+
+ls
+
+cat nyt.txt
+
+python --version
+
+python3 --version
+</code></pre>
+</div>
+
+<p>Let’s update those packages.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
+apt-get upgrade
+</code></pre>
+</div>
+
+<p>Let’s also install a few other packages</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install mailutils
+</code></pre>
+</div>
+
+<p>When you get a pink screen asking you about mail setup, pick ….internet.</p>
+
+<h2 id="our-scraperpy-file">Our <code class="highlighter-rouge">scraper.py</code> file</h2>
+
+<p>Save this file on your local machine:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import time
+
+response = requests.get("http://www.nytimes.com")
+doc = BeautifulSoup(response.text, 'html.parser')
+
+stories = doc.find_all("article", { 'class': 'story' })
+
+all_stories = []
+# Grab their headlines and bylines
+for story in stories:
+    # Grab all of the h2's inside of the story
+    headline = story.find('h2', {'class': 'story-heading'})
+    # If a headline exists, then process the rest!
+    if headline:
+        # They're COVERED in whitespace
+        headline_text = headline.text.strip()
+        # Make a dictionary with the headline
+        this_story = { 'headline': headline_text }
+        byline = story.find('p', {'class': 'byline'})
+        # Not all of them have a byline
+        if byline:
+            byline_text = byline.text.strip()
+            this_story['byline'] = byline_text
+        all_stories.append(this_story)
+
+all_stories
+
+stories_df = pd.DataFrame(all_stories)
+stories_df.to_csv("nyt-data.csv")
+
+datestring = time.strftime("%Y-%m-%d-%H-%M")
+
+filename = "nyt-data-" + datestring + ".csv"
+stories_df.to_csv(filename, index=False)
+</code></pre>
+</div>
+
+<h2 id="crontab-on-our-server">Crontab on our server</h2>
+
+<p>Now we want to run crontab.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>crontab -e
+</code></pre>
+</div>
+
+<p>It asks us what editor we want, how nice. Hit enter, nano is default. Enter this somewhere:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>*/2 * * * * curl http://www.nytimes.com &gt; ~/nyt-`date +"\%s"`.txt
+</code></pre>
+</div>
+
+<p>There’s a <code class="highlighter-rouge">\</code> before the <code class="highlighter-rouge">%</code> which wasn’t there before! It’s because cron is slightly different on Ubuntu vs. OS X and it uses a percent symbol as a new line. We need to <em>escape</em> it to say hey, really, we want to use a percent symbol here, not a newline.</p>
+
+<p>Save/exit.</p>
+
+<p>How would we know if we had an error? Let’s wait a few minutes. If you’re getting antsy about when it will be a divisible-by-two minute type <code class="highlighter-rouge">date</code>.</p>
+
+<h2 id="checking-your-mail-and-silencing-curl">Checking your mail and silencing <code class="highlighter-rouge">curl</code></h2>
+
+<p>Eventually the machine says <code class="highlighter-rouge">You have new mail.</code> Check it with… <code class="highlighter-rouge">mail</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mail
+</code></pre>
+</div>
+
+<p>You’re selecting the most recent message, hit enter. Oh, look, the output of <code class="highlighter-rouge">curl</code>, how sweet.</p>
+
+<p>Exit with <code class="highlighter-rouge">x</code>.</p>
+
+<p>Whenever you run a command, the output gets mailed to you. We… don’t really want this. The simplest way for now is to make curl silent by using the <code class="highlighter-rouge">--silent</code> flag.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>crontab -e
+</code></pre>
+</div>
+
+<p>Then change your line to have <code class="highlighter-rouge">--silent</code> with curl.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>*/2 * * * * curl --silent http://www.nytimes.com &gt; ~/nyt-`date +"\%s"`.txt
+</code></pre>
+</div>
+
+<p>Now you won’t be hassled any more. =</p>
+
+<p>This mail is also how you’ll know if you have an error in your code.</p>
+
+<h2 id="transferring-files">Transferring files</h2>
+
+<p>Now we want to take our <code class="highlighter-rouge">scraper.py</code> and transfer it from our local machine to our server. We’ll be copying it, which is usually <code class="highlighter-rouge">cp</code>, but because we’re doing it over ssh it’s <code class="highlighter-rouge">scp</code>.</p>
+
+<p>Let’s copy it from our local machine. From <strong>your machine</strong>, run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>scp -i ~/.ssh/do-droplet scraper.py root@YOUR_IP:~/
+</code></pre>
+</div>
+
+<p>This will send a file from your local machine to your remote machine, while logging in with your identity file (private key).</p>
+
+<h2 id="setting-up-python">Setting up Python</h2>
+
+<p>Back on your machine, try to run your script using <code class="highlighter-rouge">python3</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>python3 scraper.py
+</code></pre>
+</div>
+
+<p>In return, you get a joyous error message!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Traceback (most recent call last):
+  File "scraper.py", line 6, in &lt;module&gt;
+    import requests
+ImportError: No module named 'requests'
+</code></pre>
+</div>
+
+<p>Okay, well then we’ll install it…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pip3 install requests
+</code></pre>
+</div>
+
+<p>But then, another error!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The program 'pip3' is currently not installed. You can install it by typing:
+apt-get install python3-pip
+</code></pre>
+</div>
+
+<p><strong>DO NOT INSTALL PIP WITH THAT.</strong> It will install a bad, old version. We can get the new, cool version with</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+</code></pre>
+</div>
+
+<p>Run <code class="highlighter-rouge">pip --version</code> to see if it talks about Python 3. That’s what we’re hoping.</p>
+
+<p><strong>Before we spend forever running into errors, there are a lot more <em>dependencies</em> that need to be isntalled.</strong> Dependencies are pieces of code that other code… depends on, and it isn’t always Python code. Use the commands below to install a whole bushel of dependencies. Some are probably already installed with <code class="highlighter-rouge">python3-pip</code>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install build-essential
+apt-get install python3-dev
+apt-get install python3-numpy
+apt-get install python3-scipy
+apt-get install libatlas-dev
+apt-get install ipython3
+apt-get install python3-pandas
+apt-get install libxml2-dev libxslt1-dev
+apt-get install python3-matplotlib
+</code></pre>
+</div>
+
+<p>So now let’s install requests</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pip3 install requests
+</code></pre>
+</div>
+
+<p>Now we’ll run the app again…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>python3 scraper.py
+</code></pre>
+</div>
+
+<p>But then another error…</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Traceback (most recent call last):
+  File "scraper.py", line 7, in &lt;module&gt;
+    from bs4 import BeautifulSoup
+ImportError: No module named 'bs4'
+</code></pre>
+</div>
+
+<p>This is where virtual environments get <strong>magic</strong>. Skip down below to create a <code class="highlighter-rouge">requirements.txt</code> file, then come back up here.</p>
+
+<p>Once you have a <code class="highlighter-rouge">requirements.txt</code> on your server, you can just tell <code class="highlighter-rouge">pip</code> to install everything in that list.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pip3 install -r requirements.txt
+</code></pre>
+</div>
+
+<p>If you need to install packages for <code class="highlighter-rouge">postgres</code> or something, you might want to search and see what’s available using <code class="highlighter-rouge">apt-cache search</code></p>
+
+<p>apt-cache search psql
+  apt-cache search postgres</p>
+
+<h2 id="creating-a-requirementstxt-file">Creating a requirements.txt file</h2>
+
+<p>In the virtual environment that you can run <code class="highlighter-rouge">scraper.py</code> in, run the following command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pip freeze -l
+</code></pre>
+</div>
+
+<p>This lists everything in your virtual environment, as well as their version numbers. Save them to a file with the following command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pip freeze -l &gt; requirements.txt
+</code></pre>
+</div>
+
+<p>You can <code class="highlighter-rouge">cat</code> the file if you’d like. Now <code class="highlighter-rouge">scp</code> it to your server with</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>scp -i ~/.ssh/do-droplet requirements.txt root@YOUR_IP:~/
+</code></pre>
+</div>
+
+<p>Now you can return to your server up above.</p>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    
+<footer class="site-footer">
+<!--
+  <div class="wrapper">
+
+    <h2 class="footer-heading">A million and one tutorials</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>A million and one tutorials</li>
+          <li><a href="mailto:jonathan.soma@gmail.com">jonathan.soma@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/jsoma">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">jsoma</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/dangerscarf">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">dangerscarf</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">I like writing tutorials.
+</p>
+      </div>
+    </div>
+
+  </div>
+-->
+
+  <script async="" src="http://www.google-analytics.com/analytics.js"></script><script src="./10 - Servers_files/jquery.min.js"></script>
+  <script src="./10 - Servers_files/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="./10 - Servers_files/simple-sidebar.js"></script>
+
+</footer>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-5541738-17', 'jonathansoma.com');
+      ga('send', 'pageview');
+
+    </script>
+
+    <script>
+    function setIframeHeight() {
+      var remaining = false,
+          iframes = document.getElementsByClassName("iframe-demo");
+
+      for(var i = 0; i < iframes.length; i++) {
+        var iframe = iframes[i],
+            doc = iframe.contentDocument || iframe.contentWindow.document;
+
+        if(doc.readyState == 'complete') {
+          // I don't know why scrollHeight gives 150 always
+          // but suddenly offsetHeight won't work?
+          // iframe.height = doc.body.offsetHeight;
+          iframe.height = doc.body.scrollHeight;
+          iframe.width = doc.body.scrollWidth;
+        } else {
+          console.log("Not ready yet");
+          remaining = true;
+        }
+      }
+
+      setTimeout(setIframeHeight, 500);
+
+    }
+
+    document.addEventListener("DOMContentReady", setIframeHeight)
+    window.addEventListener( "load", setIframeHeight, false );
+
+    </script>
+
+  
+
+
+<div style="display: none;"><div class="niice-bar" id="niice-bar">
+    <div class="boards">
+    </div>
+    <div class="loading-spinner">Loading…</div>
+    <div class="error-text">
+      <span class="msg"></span>
+      <span class="close-cross">×</span>
+    </div>
+</div>
+</div></body></html>
