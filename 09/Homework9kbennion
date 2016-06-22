@@ -1,0 +1,82 @@
+#Kate Bennion
+6/21/2016
+#Homework 9
+#Not sure what format this should be in ideally? But
+    earthquake = {
+      'rms': '1.85',
+      'updated': '2014-06-11T05:22:21.596Z',
+      'type': 'earthquake',
+      'magType': 'mwp',
+      'longitude': '-136.6561',
+      'gap': '48',
+      'depth': '10',
+      'dmin': '0.811',
+      'mag': '5.7',
+      'time': '2014-06-04T11:58:58.200Z',
+      'latitude': '59.0001',
+      'place': '73km WSW of Haines, Alaska',
+      'net': 'us',
+      'nst': '',
+      'id': 'usc000rauc'}
+
+      print(eq_to_sentence(earthquake))
+
+def depth_to_words(earthquake):
+    if earthquake['depth'] < 70:
+        return 'shallow'
+    if 70 < earthquake['depth'] < 300:
+        return 'intermediate'
+    if 300 < earthquake['depth'] < 700:
+        return 'deep'
+
+def power(earthquake):
+    if earthquake['rms'] < 3:
+        return 'meh'
+    if 3 < earthquake['rms'] < 5:
+        return 'wowza'
+    if 5 < earthquake['rms'] < 7:
+        return 'bad news bears'
+    if earthquake['rms'] > 7:
+        return 'yeah good luck with that'
+def magnitude_to_words(earthquake):
+    return earthquake['mag']
+def day_in_words(earthquake):
+#day_in_words =
+#2014-06-04T11:58:58.200Z
+#day of the week
+def time_in_words(earthquake):
+    if
+     = "morning", "afternoon", "evening" or "night"
+date_in_words should be "Monthname day", e.g. "June 22"
+def location_in_words(earthquake):
+#latitude, longitude
+
+import dateutil.parser
+timestring = '2014-06-04T11:58:58.200Z'
+yourdate = dateutil.parser.parse(timestring)
+print("The hour is", yourdate.hour)
+print("We can do things with strftime like", print(yourdate.strftime("%Y %b")))
+
+def eq_to_sentence(earthquake):
+    return "A" depth_to_words "," magnitude_to_words "earthquake was reported" day_in_words time_in_words "on" date_in_words "in" location_in_words
+
+earthquakes_df = pd.read_csv("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.csv")
+earthquakes = earthquakes_df.to_dict('records')
+
+for earthquake in earthquakes
+if 'mag' >= 4.0
+ print(eq_to_sentence(earthquakes))
+
+Loop through each earthquake, printing sentence descriptions for the ones that are above or equal to 4.0 on the Richter scale.
+
+PART FOUR: The other bits
+
+If the earthquake is anything other than an earthquake (e.g. explosion or quarry blast), print
+
+There was also a magnitude MAGNITUDE TYPE_OF_EVENT on DATE LOCATION.
+
+For example,
+
+There was also a magnitude 1.29 quarry blast on June 19 12km SE of Tehachapi, California.
+
+with TYPE_OF_EVENT being explosion, quarry blast, etc and LOCATION being 'place' - e.g. '0km N of The Geysers, California'.

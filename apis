@@ -1,0 +1,30 @@
+import requests
+
+response = requests.get('http://www.nytimes.com')
+print(response.text)
+
+#Requests is a library aka a package? pip stands for install package...
+#a scraper is a way for you to teach your computer to grab data from a web page (the second worst thing that could ever happen to you in your life, first is PDFs)
+#an API is...
+#"programmers. what crazy scamps!"
+response = requests.get('https://api.spotify.com/v1/search?query=80s&type=playlist')
+#print(response.text.keys()) that doesn't work
+#because that's not a dictionary, that's JSON
+#Get the resposne, use .json() to convert the string (which looks like a dictionary but is actually a string and that's called JSON) into a real live dictionary
+data = response.json()
+print(data.keys())
+#stuff on the left is the URL, stuff after the question mark is parameters
+#for our example, we have queries and type for our parameters
+#put ampersands between parameters
+print(type(data['playlists']))
+print(data['playlists'].keys())
+#EXPLORATORY DATA ANALYSIS
+playlists = data['playlists']['items']
+print(type(playlists))
+
+for playlist in playlists:
+    print(playlist['name'], playlist['href'])
+
+#endpoint: a URL your computer can visit
+#OAuth is terrible
+#API key is a string of letters/numbers that say, 'I am this person'
