@@ -1,0 +1,140 @@
+#Kate Bennion
+6/21/2016
+#Homework 9 As Gone Over In Class
+    earthquake = {
+      'rms': '1.85',
+      'updated': '2014-06-11T05:22:21.596Z',
+      'type': 'earthquake',
+      'magType': 'mwp',
+      'longitude': '-136.6561',
+      'gap': '48',
+      'depth': '10',
+      'dmin': '0.811',
+      'mag': '5.7',
+      'time': '2014-06-04T11:58:58.200Z',
+      'latitude': '59.0001',
+      'place': '73km WSW of Haines, Alaska',
+      'net': 'us',
+      'nst': '',
+      'id': 'usc000rauc'}
+
+      print(eq_to_sentence(earthquake))
+
+def depth_to_words(str_depth):
+    depth = int(earthquake['depth'])
+    if depth < 70:
+        return 'shallow'
+    elif depth < 300:
+        return 'intermediate'
+    else:
+        return 'deep'
+
+def power(earthquake):
+    if earthquake['rms'] < 3:
+        return 'meh'
+    if 3 < earthquake['rms'] < 5:
+        return 'wowza'
+    if 5 < earthquake['rms'] < 7:
+        return 'bad news bears'
+    if earthquake['rms'] > 7:
+        return 'yeah good luck with that'
+
+def magnitude_to_words(str_magnitude):
+    mag = float(str_magnitude)
+    if mag < 2:
+        return "not noticeable"
+    elif mag < 4:
+        return "weak"
+    elif mag < 6:
+        return "moderate"
+    elif mag < 7:
+        return "major"
+    elif mag < 9:
+        return "great"
+    else:
+        return "super"
+
+def day_in_words(earthquake):
+    datestring = earthquake['time']
+    eq_date = dateutil.parser.parse(datestring)
+    return eq_date.strftime("%A")
+print(day_in_words(earthquake))
+
+
+def time_in_words(datestring):
+    eq_date = dateutil.parser.parse(datestring)
+    if eq_date.hour < 3:
+        return "night"
+    elif eq_date.hour < 12:
+        return "morning"
+    elif eq_date.hour < 18:
+        return "afternoon"
+    elif eq_date.hour < 21:
+        return "evening"
+    else:
+        return "night"
+
+#     = "morning", "afternoon", "evening" or "night"
+#date_in_words should be "Monthname day", e.g. "June 22"
+def date_in_words(datestring):
+    datestring = earthquake['time']
+    eq_date = dateutil.parser.parse(datestring)
+    return eq_date.strftime("%B %d").replace(" 0", " ")
+print(date_in_words(earthquake))
+
+def location_in_words(earthquake):
+#latitude, longitude
+
+import dateutil.parser
+timestring = '2014-06-04T11:58:58.200Z'
+yourdate = dateutil.parser.parse(timestring)
+print("The hour is", yourdate.hour)
+print("We can do things with strftime like", print(yourdate.strftime("%Y %b")))
+
+def eq_to_sentence(earthquake):
+    # previously print("A" depth_to_words "," magnitude_to_words "earthquake was reported" day_in_words time_in_words "on" date_in_words "in" location_in_words)
+{
+'depth' = depth_to_words(earthquake),
+'power' = magnitude_to_words(earthquake),
+'mag' = earthquake['mag'],
+'day' = day_in_words(earthquake),
+'time_of_day' = time_in_words(earthquake),
+'date' = date_in_words(earthquake),
+'location' = earthquake['place']
+}
+    return ("A {depth} {power} {mag} magnitude earthquake was reported {day} {time_of_day} on {date} {location}".format(depth, power, mag, day, time, date, location)
+
+#{...}.format(**dictname)
+
+earthquakes_df = pd.read_csv("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_month.csv")
+earthquakes = earthquakes_df.to_dict('records')
+
+for earthquake in earthquakes
+if 'mag' >= 4.0
+ print(eq_to_sentence(earthquakes))
+
+#Loop through each earthquake, printing sentence descriptions for the ones that are above or equal to 4.0 on the Richter scale.
+
+eq_list = earthquakes_df.to_dict('records')
+for eq in eq_list:
+    print(eq_to_sentence(eq))
+
+PART FOUR: The other bits
+
+If the earthquake is anything other than an earthquake (e.g. explosion or quarry blast), print
+
+There was also a magnitude MAGNITUDE TYPE_OF_EVENT on DATE LOCATION.
+
+For example,
+
+There was also a magnitude 1.29 quarry blast on June 19 12km SE of Tehachapi, California.
+
+
+with TYPE_OF_EVENT being explosion, quarry blast, etc and LOCATION being 'place' - e.g. '0km N of The Geysers, California'.
+
+for eq in eq_list:
+    if eq['type'] == 'earthquake':
+        pass
+        #print(eq_to_sentence(eq))
+    else:
+        print("There was also a magnitude {mag} {type} at {location}".format(**eq_list))

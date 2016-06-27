@@ -1,0 +1,34 @@
+import requests
+response = requests.get('https://api.forecast.io/forecast/a69e446312b60b9982fba351359a544f/40.7128,74.0059')
+data = response.json()
+
+today = data['daily']['data'][0]
+
+def temp_feeling(today):
+    if today['temperatureMax'] >= 38:
+        return "wretched"
+    elif 27 < today['temperatureMax'] < 38:
+        return "glorious"
+    elif 10 < today['temperatureMax'] <= 27:
+        return "tolerable"
+    elif today['temperatureMax'] <= 10:
+        return "frigid"
+
+def rain_warning(today):
+    if today['precipProbability'] > .5:
+        return "Tut tut, looks like rain."
+    else:
+        return "Leave the rainboots at home today."
+
+import time
+
+def send_simple_message():
+    return requests.post(
+        "https://api.mailgun.net/v3/Sandbox54ef43a44a8a4e788eda99ba38bc4500/messages",
+        auth=("api", "pubkey-415d5fcce3927c6eea8567f2ab78e8f1"),
+        data={"from": "Excited User <mailgun@YOUR_DOMAIN_NAME>",
+              "to": ["bar@example.com", "YOU@YOUR_DOMAIN_NAME"],
+              "subject": "8 AM Weather Forecast:", dt.datetime.today().strftime("%B/%d/%Y")
+              "text": "Right now it is", (data['currently']['temperature']), "degrees out and", (data['currently']['summary'].lower())+ ". Today it will be", temp_feeling(today),
+      "with a high of", (today['temperatureMax']),
+      "and a low of", (today['temperatureMin']), ".", rain_warning(today)})
